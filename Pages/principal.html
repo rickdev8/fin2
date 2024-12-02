@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Monitoramento de Finanças</title>
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#transacoes">Transações</a></li>
+                <li><a href="#categorias">Categorias</a></li>
+                <li><a href="#relatorios">Relatórios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Dashboard Section -->
+        <section id="dashboard">
+            <div class="container">
+                <h2>Visão Geral das Finanças</h2>
+                <div class="dashboard-stats">
+                    <div class="stat-box income">
+                        <h3>Receitas</h3>
+                        <p id="valorreceita"></p>
+                    </div>
+                    <div class="stat-box expense">
+                        <h3>Despesas</h3>
+                        <p id="valordespesa"></p>
+                    </div>
+                    <div class="stat-box balance">
+                        <h3>Saldo</h3>
+                        <p id="valorfinal"></p>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+        <section id="transacoes">
+            <div class="container">
+            
+                <div class="add-transaction">
+                    <div class="title">
+                        <h3>Adicionar Transação</h3>
+                    </div>
+        
+                    <div class="form" id="addTransactionForm"> 
+                      
+                        <div class="form-group" id="dois">
+                            <label>Tipo</label>
+                            <div class="g2">
+                                <div class="entrada">
+                                    <label id="label2">Entrada</label>
+                                    <input type="radio" id="entradar" value="entrada" name="option" required>
+                                </div>
+                                <div class="saida">
+                                    <label id="label2">Saída</label>
+                                    <input  type="radio" id="saidar" value="saida" name="option" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                       
+                        <div class="form-group">
+                            <label for="description">Descrição</label>
+                            <input class="input2" type="text" id="description" name="description" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="value">Valor</label>
+                            <input class="input2" type="number" id="value" name="value" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Data</label>
+                            <input class="input2" type="date" value="2013-02-21" id="date" name="date" required>
+                        </div>
+                        <button id="adc" onclick="adctransaction()" class="btn">Adicionar Transação</button>
+                    </div>
+                </div>
+               
+          
+                <table>
+                    <h2>Histórico de Transações</h2>
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Descrição</th>
+                            <th>Categoria</th>
+                            <th>Valor</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+                    
+                        <tbody id="tbody">
+                       
+                       
+                        
+                        </tbody>
+                    
+                </table>
+            </div>
+        </section>
+
+        <section id="categorias">
+            <div class="container">
+                <h2>Categorias de Despesas e Receitas</h2>
+                <div class="category-list">
+                    <div class="category">
+                        <h3>Receitas</h3>
+                        <ul>
+                            <li>Venda de produtos</li>
+                            <li>Consultorias</li>
+                            <li>Investimentos</li>
+                        </ul>
+                    </div>
+                    <div class="category">
+                        <h3>Despesas</h3>
+                        <ul>
+                            <li>Aluguel</li>
+                            <li>Material de escritório</li>
+                            <li>Salários</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <section id="relatorios">
+            <div class="container">
+                <h2>Relatórios Financeiros</h2>
+                <div class="charts">
+                    <div class="chart">
+                        <h3>Gráfico de Receitas vs Despesas</h3>
+                        <div class="chart-placeholder">
+                            <canvas id="myChart" class="myChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart">
+                        <h3>Gráfico de Evolução do Saldo</h3>
+                        <div class="chart-placeholder">
+                            <canvas id="evo"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+
+    <footer>
+        <p>&copy; 2024 Monitoramento de Finanças</p>
+    </footer>
+    <script src="Js/index.js"></script>
+    
+</body>
+
+</html>
